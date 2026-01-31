@@ -115,6 +115,14 @@ calcularPrecioFinal(100, 2, 0.21); // Subtotal: 200, Total: 242
 
 console.log("========== EJERCICIO 2: Función con parámetros ==========");
 // Tu código aquí
+function multiplicar2(a, b) {
+  const resultado = a * b;
+  console.log(a + " * " + b + " = " + resultado);
+}
+
+multiplicar2(4, 5);
+multiplicar2(7, 3);
+multiplicar2(10, 2);
 
 // ============================================
 // FUNCIÓN CON RETURN (devuelve un valor)
@@ -201,6 +209,17 @@ console.log("Calificación 3: " + calif3);
 
 console.log("========== EJERCICIO 3: Return con cálculo ==========");
 // Tu código aquí
+function aplicarDescuento(precio, porcentaje) {
+  const descuento = precio * porcentaje;
+  const precioFinal = precio - descuento;
+  return precioFinal;
+}
+
+const precioConDescuento1 = aplicarDescuento(100, 0.20); // 80
+const precioConDescuento2 = aplicarDescuento(50, 0.10); // 45
+
+console.log("Precio con descuento 1: $" + precioConDescuento1);
+console.log("Precio con descuento 2: $" + precioConDescuento2);
 
 // ============================================
 // FUNCIÓN CON RETURN Y CONDICIONALES
@@ -236,6 +255,29 @@ console.log(obtenerMayor(3, 20)); // 20
 
 console.log("========== EJERCICIO 4: Return con condicionales ==========");
 // Tu código aquí
+function obtenerDiaSegun(numero) {
+  if (numero === 1) {
+    return "Lunes";
+  } else if (numero === 2) {
+    return "Martes";
+  } else if (numero === 3) {
+    return "Miércoles";
+  } else if (numero === 4) {
+    return "Jueves";
+  } else if (numero === 5) {
+    return "Viernes";
+  } else if (numero === 6) {
+    return "Sábado";
+  } else if (numero === 7) {
+    return "Domingo";
+  } else {
+    return "Día inválido";
+  }
+}
+
+console.log(obtenerDiaSegun(1)); // Lunes
+console.log(obtenerDiaSegun(5)); // Viernes
+console.log(obtenerDiaSegun(9)); // Día inválido
 
 // ============================================
 // FUNCIÓN CON ARRAYS COMO PARÁMETRO
@@ -306,7 +348,26 @@ console.log(contarPares([10, 15, 20, 25, 30])); // 3 (10, 20, 30)
 
 console.log("========== EJERCICIO 5: Función con array ==========");
 // Tu código aquí
+const array1 = [5, 15, 8, 22, 3, 18];
+const limite1 = 10;
 
+const array2 = [1, 2, 3, 4, 5];
+const limite2 = 3;
+
+function contarNumerosMayoresA(numeros, limite) {
+  let contador = 0;
+
+  for (const numero of numeros) {
+    if (numero > limite) {
+      contador++;
+    }
+  }
+
+  return contador;
+}
+
+const resultadoArray1 = contarNumerosMayoresA(array1, limite1);
+const resultadoArray2 = contarNumerosMayoresA(array2, limite2);
 // ============================================
 // FUNCIÓN CON OBJETO COMO PARÁMETRO
 // ============================================
@@ -368,6 +429,24 @@ console.log(calcularCostoPedido(pedido2)); // 150 (2 * 75)
 
 console.log("========== EJERCICIO 6: Función con objeto ==========");
 // Tu código aquí
+const libro1 = {
+  titulo: "Cien Años de Soledad",
+  autor: "Gabriel García Márquez",
+  año: 1967,
+};
+
+const libro2 = {
+  titulo: "1984",
+  autor: "George Orwell",
+  año: 1949,
+};
+
+function obtenerDescripcionLibro(libro) {
+  return `El libro ${libro.titulo} fue escrito por ${libro.autor} en ${libro.año}`;
+}
+
+console.log(obtenerDescripcionLibro(libro1)); // "El libro Cien Años de Soledad fue escrito por Gabriel García Márquez en 1967"
+console.log(obtenerDescripcionLibro(libro2)); // "El libro 1984 fue escrito por George Orwell en 1949"
 
 // ============================================
 // ARROW FUNCTIONS (Funciones flecha)
@@ -409,6 +488,18 @@ console.log(elevarAlCuadrado(5)); // 25
 
 console.log("========== EJERCICIO 7: Arrow functions ==========");
 // Tu código aquí
+const obtenerEdad = (anioNacimiento) => 2026 - anioNacimiento;
+
+console.log(obtenerEdad(1990)); // 36
+console.log(obtenerEdad(2000)); // 26
+
+const esPositivo = (numero) => numero > 0;
+
+console.log(esPositivo(5)); // true
+console.log(esPositivo(-3)); // false
+
+
+
 
 // ============================================
 // PARÁMETROS POR DEFECTO
@@ -448,6 +539,13 @@ console.log(crearPerfil("Rosa", 30, "Barcelona")); // Rosa (30 años) de Barcelo
 
 console.log("========== EJERCICIO 8: Parámetros por defecto ==========");
 // Tu código aquí
+function crearProducto(nombre, precio = 10, stock = 5) {
+  return `${nombre} - Precio: $${precio}, Stock: ${stock}`;
+}
+
+console.log(crearProducto("Camiseta")); // Solo nombre
+console.log(crearProducto("Pantalón", 20)); // Nombre y precio
+console.log(crearProducto("Zapatos", 50, 10)); // Todos los parámetros
 
 // ============================================
 // FUNCIONES QUE LLAMAN OTRAS FUNCIONES
@@ -490,6 +588,30 @@ console.log(
 );
 // Tu código aquí
 
+function calcularIMC(peso, altura) {
+  return peso / (altura * altura);
+}
+
+function obtenerCategoriaIMC(imc) {
+  if (imc < 18.5) {
+    return "Bajo peso";
+  } else if (imc >= 18.5 && imc <= 24.9) {
+    return "Normal";
+  } else if (imc >= 25 && imc <= 29.9) {
+    return "Sobrepeso";
+  } else {
+    return "Obeso";
+  }
+}
+
+function analizarPeso(peso, altura) {
+  const imc = calcularIMC(peso, altura);
+  const categoria = obtenerCategoriaIMC(imc);
+  return `Tu IMC es ${imc.toFixed(2)}, categoría: ${categoria}`;
+}
+
+console.log(analizarPeso(70, 1.75)); // Persona 1
+console.log(analizarPeso(90, 1.80)); // Persona 2
 // ============================================
 // RESUMEN
 // ============================================
