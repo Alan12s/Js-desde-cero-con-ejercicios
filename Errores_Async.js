@@ -5,7 +5,7 @@
 /**
  * A veces el código genera ERRORES
  * try-catch permite manejar esos errores sin que el programa falle
- * 
+ *
  * ANALOGÍA:
  * "Intenta hacer X (try)
  *  Si falla, haz Y en su lugar (catch)
@@ -29,36 +29,36 @@
 console.log("========== EJEMPLO TRY-CATCH ==========");
 
 try {
-    const objeto = { nombre: "Juan" };
-    console.log(objeto.nombre);      // "Juan" - OK
-    console.log(objeto.edad);        // undefined - No falla, pero puede causar problemas
-    console.log(objeto.edad.valor);  // ERROR - No puede acceder a .valor de undefined
+  const objeto = { nombre: "Juan" };
+  console.log(objeto.nombre); // "Juan" - OK
+  console.log(objeto.edad); // undefined - No falla, pero puede causar problemas
+  console.log(objeto.edad.valor); // ERROR - No puede acceder a .valor de undefined
 } catch (error) {
-    console.log("Capturé un error:", error.message);
+  console.log("Capturé un error:", error.message);
 }
 
 console.log("El programa continúa funcionando"); // Se ejecuta aunque haya error
 
 // EJEMPLO 2: Convertir string a número
 try {
-    const numero = parseInt("abc"); // NaN, no lanza error pero es un problema
-    if (isNaN(numero)) {
-        throw new Error("El valor no es un número válido"); // Forzar error
-    }
-    console.log("Número válido:", numero);
+  const numero = parseInt("abc"); // NaN, no lanza error pero es un problema
+  if (isNaN(numero)) {
+    throw new Error("El valor no es un número válido"); // Forzar error
+  }
+  console.log("Número válido:", numero);
 } catch (error) {
-    console.log("Error capturado:", error.message);
+  console.log("Error capturado:", error.message);
 }
 
 // EJEMPLO 3: Array con índice inválido
 try {
-    const array = [1, 2, 3];
-    console.log(array[0]); // 1 - OK
-    console.log(array[10]); // undefined - No falla
-    const valor = array[10];
-    console.log(valor.toFixed(2)); // ERROR - undefined no tiene método toFixed
+  const array = [1, 2, 3];
+  console.log(array[0]); // 1 - OK
+  console.log(array[10]); // undefined - No falla
+  const valor = array[10];
+  console.log(valor.toFixed(2)); // ERROR - undefined no tiene método toFixed
 } catch (error) {
-    console.log("Hubo un error:", error.message);
+  console.log("Hubo un error:", error.message);
 }
 
 // EJERCICIO 1: TRY-CATCH
@@ -71,7 +71,6 @@ try {
 console.log("========== EJERCICIO 1: TRY-CATCH ==========");
 // Tu código aquí
 
-
 // ============================================
 // THROW - Lanzar errores manualmente
 // ============================================
@@ -83,41 +82,41 @@ console.log("========== EJERCICIO 1: TRY-CATCH ==========");
 
 // EJEMPLO 1: Validar edad
 function puedeVotar(edad) {
-    try {
-        if (edad < 0) {
-            throw new Error("La edad no puede ser negativa");
-        }
-        if (edad < 18) {
-            throw new Error("Debes tener al menos 18 años para votar");
-        }
-        return "Puedes votar";
-    } catch (error) {
-        return "Error: " + error.message;
+  try {
+    if (edad < 0) {
+      throw new Error("La edad no puede ser negativa");
     }
+    if (edad < 18) {
+      throw new Error("Debes tener al menos 18 años para votar");
+    }
+    return "Puedes votar";
+  } catch (error) {
+    return "Error: " + error.message;
+  }
 }
 
-console.log(puedeVotar(25));  // "Puedes votar"
-console.log(puedeVotar(15));  // "Error: Debes tener al menos 18 años para votar"
-console.log(puedeVotar(-5));  // "Error: La edad no puede ser negativa"
+console.log(puedeVotar(25)); // "Puedes votar"
+console.log(puedeVotar(15)); // "Error: Debes tener al menos 18 años para votar"
+console.log(puedeVotar(-5)); // "Error: La edad no puede ser negativa"
 
 // EJEMPLO 2: Validar parámetro de función
 function obtenerElementoArray(array, indice) {
-    try {
-        if (!Array.isArray(array)) {
-            throw new Error("El primer parámetro debe ser un array");
-        }
-        if (indice < 0 || indice >= array.length) {
-            throw new Error("Índice fuera de rango");
-        }
-        return array[indice];
-    } catch (error) {
-        return "Error: " + error.message;
+  try {
+    if (!Array.isArray(array)) {
+      throw new Error("El primer parámetro debe ser un array");
     }
+    if (indice < 0 || indice >= array.length) {
+      throw new Error("Índice fuera de rango");
+    }
+    return array[indice];
+  } catch (error) {
+    return "Error: " + error.message;
+  }
 }
 
-console.log(obtenerElementoArray([1, 2, 3], 1));      // 2
-console.log(obtenerElementoArray([1, 2, 3], 10));     // "Error: Índice fuera de rango"
-console.log(obtenerElementoArray("no es array", 0));  // "Error: El primer parámetro debe ser un array"
+console.log(obtenerElementoArray([1, 2, 3], 1)); // 2
+console.log(obtenerElementoArray([1, 2, 3], 10)); // "Error: Índice fuera de rango"
+console.log(obtenerElementoArray("no es array", 0)); // "Error: El primer parámetro debe ser un array"
 
 // EJERCICIO 2: THROW
 // Crea una función "calcularDescuento(precio, porcentaje)" que:
@@ -128,7 +127,6 @@ console.log(obtenerElementoArray("no es array", 0));  // "Error: El primer pará
 
 console.log("========== EJERCICIO 2: THROW ==========");
 // Tu código aquí
-
 
 // ============================================
 // FINALLY - Se ejecuta siempre
@@ -143,26 +141,26 @@ console.log("========== EJERCICIO 2: THROW ==========");
 console.log("\n========== EJEMPLO FINALLY ==========");
 
 try {
-    console.log("Intentando algo...");
-    throw new Error("Algo salió mal");
-    console.log("Esto NO se ejecuta");
+  console.log("Intentando algo...");
+  throw new Error("Algo salió mal");
+  console.log("Esto NO se ejecuta");
 } catch (error) {
-    console.log("Error capturado:", error.message);
+  console.log("Error capturado:", error.message);
 } finally {
-    console.log("Finally: Se ejecuta SIEMPRE"); // Se ejecuta sí o sí
+  console.log("Finally: Se ejecuta SIEMPRE"); // Se ejecuta sí o sí
 }
 
 // EJEMPLO 2: Finally sin error
 console.log("\n========== EJEMPLO FINALLY SIN ERROR ==========");
 
 try {
-    console.log("Todo va bien");
-    const resultado = 5 + 3;
-    console.log("Resultado:", resultado);
+  console.log("Todo va bien");
+  const resultado = 5 + 3;
+  console.log("Resultado:", resultado);
 } catch (error) {
-    console.log("Error:", error.message);
+  console.log("Error:", error.message);
 } finally {
-    console.log("Finally: Limpiando recursos..."); // Se ejecuta igualmente
+  console.log("Finally: Limpiando recursos..."); // Se ejecuta igualmente
 }
 
 // EJERCICIO 3: FINALLY
@@ -174,19 +172,18 @@ try {
 console.log("========== EJERCICIO 3: FINALLY ==========");
 // Tu código aquí
 
-
 // ============================================
 // PROMESAS - Introducción
 // ============================================
 
 /**
  * Una promesa representa una operación que ocurrirá en el futuro
- * 
+ *
  * Estados:
  * - Pending (pendiente): La operación está en progreso
  * - Fulfilled (cumplida): La operación fue exitosa
  * - Rejected (rechazada): La operación falló
- * 
+ *
  * ANALOGÍA:
  * "Prometo traer un café en 2 segundos"
  * - Ahora: estoy en proceso (pending)
@@ -198,22 +195,22 @@ console.log("========== EJERCICIO 3: FINALLY ==========");
 console.log("\n========== EJEMPLO PROMESA ==========");
 
 const miPromesa = new Promise((resolve, reject) => {
-    // resolve = si todo va bien
-    // reject = si algo falla
-    
-    setTimeout(() => {
-        resolve("Operación completada");
-    }, 1000); // Después de 1 segundo
+  // resolve = si todo va bien
+  // reject = si algo falla
+
+  setTimeout(() => {
+    resolve("Operación completada");
+  }, 1000); // Después de 1 segundo
 });
 
 // Esperar a que la promesa se cumpla
 miPromesa
-    .then((resultado) => {
-        console.log(resultado); // "Operación completada"
-    })
-    .catch((error) => {
-        console.log("Error:", error);
-    });
+  .then((resultado) => {
+    console.log(resultado); // "Operación completada"
+  })
+  .catch((error) => {
+    console.log("Error:", error);
+  });
 
 // EJERCICIO 4: PROMESA
 // Crea una promesa que:
@@ -225,7 +222,6 @@ miPromesa
 console.log("========== EJERCICIO 4: PROMESA ==========");
 // Tu código aquí
 
-
 // ============================================
 // ASYNC/AWAIT - Forma moderna de usar promesas
 // ============================================
@@ -233,35 +229,35 @@ console.log("========== EJERCICIO 4: PROMESA ==========");
 /**
  * async/await permite escribir código asincrónico como si fuera sincrónico
  * Es más fácil de leer que .then()
- * 
+ *
  * - async: declara que una función es asincrónica
  * - await: espera a que se cumpla una promesa
  */
 
 // EJEMPLO 1: Función async simple
 async function saludar() {
-    return "Hola"; // Devuelve automáticamente una promesa
+  return "Hola"; // Devuelve automáticamente una promesa
 }
 
 // Usar la función async
-saludar().then(resultado => {
-    console.log(resultado); // "Hola"
+saludar().then((resultado) => {
+  console.log(resultado); // "Hola"
 });
 
 // EJEMPLO 2: async/await
 console.log("\n========== EJEMPLO ASYNC/AWAIT ==========");
 
 async function esperarYSaludar() {
-    console.log("Esperando...");
-    
-    // Simular espera de 1 segundo
-    await new Promise((resolve) => {
-        setTimeout(() => {
-            resolve();
-        }, 1000);
-    });
-    
-    console.log("¡Operación completada!");
+  console.log("Esperando...");
+
+  // Simular espera de 1 segundo
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 1000);
+  });
+
+  console.log("¡Operación completada!");
 }
 
 // Llamar función async
@@ -269,21 +265,21 @@ esperarYSaludar();
 
 // EJEMPLO 3: async/await con error handling
 async function obtenerDatos() {
-    try {
-        console.log("Obteniendo datos...");
-        
-        // Simular obtención de datos
-        const datos = await new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve({ id: 1, nombre: "Juan" });
-            }, 1000);
-        });
-        
-        console.log("Datos obtenidos:", datos);
-        return datos;
-    } catch (error) {
-        console.log("Error al obtener datos:", error);
-    }
+  try {
+    console.log("Obteniendo datos...");
+
+    // Simular obtención de datos
+    const datos = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ id: 1, nombre: "Juan" });
+      }, 1000);
+    });
+
+    console.log("Datos obtenidos:", datos);
+    return datos;
+  } catch (error) {
+    console.log("Error al obtener datos:", error);
+  }
 }
 
 // Llamar función async
@@ -299,7 +295,6 @@ obtenerDatos();
 console.log("========== EJERCICIO 5: ASYNC/AWAIT ==========");
 // Tu código aquí
 
-
 // ============================================
 // RESUMEN
 // ============================================
@@ -310,13 +305,13 @@ console.log("========== EJERCICIO 5: ASYNC/AWAIT ==========");
  * - catch: se ejecuta si hay error
  * - finally: se ejecuta SIEMPRE
  * - throw: lanza error manualmente
- * 
+ *
  * PROMESAS:
  * - Representan operaciones futuras
  * - Estados: pending, fulfilled, rejected
  * - .then(): cuando se cumple
  * - .catch(): cuando falla
- * 
+ *
  * ASYNC/AWAIT:
  * - async: función asincrónica
  * - await: espera a que se cumpla

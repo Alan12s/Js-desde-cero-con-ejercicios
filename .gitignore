@@ -1,0 +1,38 @@
+# Archivos de soluciones personales del usuario
+tu_*.js
+*_solucion_personal.js
+*_resuelto.js
+mi_*.js
+alan_*.js
+
+# Node / npm
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/settings.json
+.env
+.env.local
+
+# Salida / build
+dist/
+build/
+.next/
+.nuxt/
+out/
+
+# Editores
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos temporales
+*.tmp
+*.log
