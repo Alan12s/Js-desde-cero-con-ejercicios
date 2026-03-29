@@ -1,0 +1,86 @@
+﻿1) JavaScript (vanilla/front)
+Proyecto: Kit de utilidades SPA + micro-proyectos (ToDo avanzado, buscador de APIs públicas, visualizador de datos).
+Por qué: antes del framework, dominar JS puro (DOM, Fetch, Promesas, ES modules) es esencial.
+Fases
+Fase 0: DOM manipulation, eventos, fetch, ES6+ (let/const, arrow functions, promises).
+Fase 1: Modularización con ES Modules, bundler simple (Vite), pruebas unitarias.
+Fase 2: State management manual, performance, patrones (pub-sub, observer).
+Fase 3: Migración de componentes a React/Vue/Alpine.
+Buenas prácticas
+Principios SOLID aplicados a JS, modularidad, pruebas, accessibility, performance.
+Stack y herramientas
+Vanilla JS, Vite, Jest, ESLint, Prettier.
+Documentación
+Manual de estilo (JS styleguide), README, explicación de patrones usados.
+Jira
+Épica: "Biblioteca de utilidades" → Tareas: fetch wrapper, modal component, pruebas unitarias.
+
+2) PHP (sin framework)
+Proyecto: Sistema de facturación/inventario ligero (modelo MVC hecho a mano).
+Por qué: aprender PHP puro (routing, request handling, sesiones) forja comprensión real antes de frameworks.
+Fases
+Fase 0: PHP procedural → CRUD básico con MySQL.
+Fase 1: Refactor a MVC simple, autoloading (PSR-4), composer, rutas básicas.
+Fase 2: Seguridad, manejo de archivos, pruebas simples.
+Fase 3: Migrar a framework (Laravel) o reforzar con patterns (Repository, Service).
+Buenas prácticas
+PSR standards, separación de concerns, inyección de dependencias, manejo de errores.
+Herramientas
+PHP 8+, Composer, PHPUnit, PHPCS.
+Documentación
+README, diagrama de flujo, manual para instalar en LAMP/Containers.
+Jira
+Épica: "Core facturación" → Tareas: modelar facturas, generar PDF, tests.
+
+3) Python (general)
+Proyecto: Herramienta CLI + web para analítica de datos (ingesta CSV, limpieza, visualización).
+Por qué: te permite practicar scripting, paquetes, APIs y ciencia de datos.
+Fases
+Fase 0: Scripts para parsear CSV, limpieza básica (pandas).
+Fase 1: CLI con click/argparse, generación de reportes HTML/CSV.
+Fase 2: API con FastAPI para servir reportes; visualizaciones con matplotlib/plotly.
+Fase 3: Pipeline ETL, tests, Docker, orquestación simple.
+Buenas prácticas
+Packaging (setup.py/pyproject), typing, pruebas (pytest), logging estructurado.
+Herramientas
+Python 3.10+, pandas, click, FastAPI, pytest, black, mypy.
+Documentación
+README, guide para data pipeline, ejemplos de uso CLI.
+Jira
+Épica: "ETL & reports" → Tareas: ingestion, cleaning, CLI, API.
+
+4) CSS (Tailwind v3 y Bootstrap permitidos)
+Proyecto: Biblioteca de componentes y dashboard responsive (design system).
+Por qué: dominar layout, responsive, design tokens y accesibilidad.
+Fases
+Fase 0: Maquetación con CSS puro: grid/flexbox, responsive 1-col → multi-col.
+Fase 1: Rehacer con Tailwind v3 (utility-first), crear componentes reutilizables.
+Fase 2: Tokens de diseño, theming (dark mode), accesibilidad WCAG.
+Fase 3: Documentar sistema de diseño, storybook, pruebas visuales (Percy).
+Buenas prácticas
+BEM donde tenga sentido, mobile-first, performance (critical CSS), variables CSS.
+Herramientas
+Tailwind v3, Bootstrap opcional, PostCSS, Storybook, Chromatic/Percy.
+Documentación
+Style guide, tokens, ejemplos de uso, componentes accesibles.
+Jira
+Épica: "Design System" → Tareas: botón, formularios, layout grid, documentación.
+
+5) Java
+Proyecto: Sistema de reservas (hotel o salas) con backend Java y API REST.
+Por qué: te enseña OOP, patrones, concurrencia y despliegue en JVM.
+Fases
+Fase 0: Console app con modelos y lógica de reservas.
+Fase 1: Spring Boot REST API, JPA/Hibernate con PostgreSQL.
+Fase 2: Seguridad (Spring Security), transacciones, cache, pruebas unitarias/integración.
+Fase 3: Microservicios, messaging (Kafka/RabbitMQ), despliegue en contenedores.
+Buenas prácticas
+SOLID, DDD (para entidades y aggregates), transaction boundaries, testing.
+Herramientas
+Java 17+, Spring Boot, JPA, Maven/Gradle, JUnit, Mockito.
+Desktop
+Si lo deseas como app de escritorio, usar JavaFX (rich client) o empaquetar con jlink.
+Documentación
+Diagrama de clases, API docs (Swagger), guía de despliegue.
+Jira
+Épica: "Reservas core" → Tareas: modelar reserva, endpoints, tests, seguridad.
